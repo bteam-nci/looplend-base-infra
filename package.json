@@ -1,21 +1,21 @@
 {
-  "name": "base-infra",
-  "version": "0.1.0",
-  "bin": {
-    "base-infra": "bin/base-infra.js"
-  },
-  "scripts": {
-    "build": "echo \"The build step is not required when using JavaScript!\" && exit 0",
-    "cdk": "cdk",
-    "prepare": "husky install"
-  },
-  "devDependencies": {
-    "aws-cdk": "2.81.0",
-    "husky": "^8.0.3",
-    "prettier": "^2.8.8"
-  },
-  "dependencies": {
-    "aws-cdk-lib": "2.81.0",
-    "constructs": "^10.0.0"
-  }
+    "name": "base-infra",
+    "version": "0.1.0",
+    "bin": {
+        "base-infra": "bin/base-infra.js"
+    },
+    "scripts": {
+        "build": "echo \"The build step is not required when using JavaScript!\" && exit 0",
+        "cdk": "cdk",
+        "prepare": "husky install"
+    },
+    "devDependencies": {
+        "aws-cdk": "2.81.0",
+        "husky": "^8.0.3",
+        "prettier": "^2.8.8"
+    },
+    "dependencies": {
+        "aws-cdk-lib": "2.81.0",
+        "constructs": "^10.0.0"
+    }
 }
