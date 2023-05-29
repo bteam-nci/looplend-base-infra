@@ -2,7 +2,6 @@
 
 This is a cdk project that holds:
 
--   the database (dynamo)
 -   the hosted zones (route53)
 -   the certificate (acm)
 -   the distribution (cloudfront)
