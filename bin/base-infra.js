@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-const cdk = require('aws-cdk-lib')
-const { BaseInfraStack } = require('../lib/base-infra-stack')
+import cdk from 'aws-cdk-lib'
+
+import { BaseInfraStack } from '../lib/base-infra-stack'
 
 const app = new cdk.App()
 const stage = app.node.tryGetContext('stage')
