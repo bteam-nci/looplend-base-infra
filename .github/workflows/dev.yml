@@ -16,4 +16,4 @@ jobs:
             - name: Deploy
               uses: hg-jarlinghaus/aws-cdk-github-actions@v1.2.3
               with:
-                cdk_subcommand: deploy
+                  cdk_subcommand: deploy
