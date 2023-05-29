@@ -1,12 +1,16 @@
-# Welcome to your CDK JavaScript project
+# LoopLend base infrastructure
 
-This is a blank project for CDK development with JavaScript.
+This is a cdk project that holds:
+- the database (dynamo)
+- the hosted zones (route53)
+- the certificate (acm)
+- the distribution (cloudfront)
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app. The build step is not required when using JavaScript.
+## Setup
 
-## Useful commands
+Run `npm install`
 
-* `npm run test`         perform the jest unit tests
-* `cdk deploy`           deploy this stack to your default AWS account/region
-* `cdk diff`             compare deployed stack with current state
-* `cdk synth`            emits the synthesized CloudFormation template
+## CI / CD 
+
+Every push to master will trigger a build and deploy to the dev environment.
+Every push to a releases branch will push to the prod environment.

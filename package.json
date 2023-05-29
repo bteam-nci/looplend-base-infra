@@ -7,11 +7,12 @@
   "scripts": {
     "build": "echo \"The build step is not required when using JavaScript!\" && exit 0",
     "cdk": "cdk",
-    "test": "jest"
+    "prepare": "husky install"
   },
   "devDependencies": {
     "aws-cdk": "2.81.0",
-    "jest": "^29.5.0"
+    "husky": "^8.0.3",
+    "prettier": "^2.8.8"
   },
   "dependencies": {
     "aws-cdk-lib": "2.81.0",
