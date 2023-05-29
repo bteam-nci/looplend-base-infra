@@ -1,6 +1,7 @@
 {
     "name": "base-infra",
     "version": "0.1.0",
+    "type": "module",
     "bin": {
         "base-infra": "bin/base-infra.js"
     },
