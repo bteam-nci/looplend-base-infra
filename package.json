@@ -7,7 +7,9 @@
     "scripts": {
         "build": "echo \"The build step is not required when using JavaScript!\" && exit 0",
         "cdk": "cdk",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "deploy": "cdk deploy",
+        "deploy:stage": "cdk deploy --no-staging --require-approval never -c"
     },
     "devDependencies": {
         "aws-cdk": "2.81.0",

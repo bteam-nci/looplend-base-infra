@@ -1,8 +1,9 @@
 name: CI-dev
 
 # Controls when the workflow will run
+env:
+    STAGE: dev
 on:
-    # Triggers the workflow on push or pull request events but only for the "main" branch
     push:
         branches: ['master']
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -10,10 +11,18 @@ jobs:
     deploy-dev:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
-            - name: Install
-              run: npm install
-            - name: Deploy
-              uses: hg-jarlinghaus/aws-cdk-github-actions@v1.2.3
+            - name: Checkout repository
+              uses: actions/checkout@v3
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
               with:
-                  cdk_subcommand: deploy
+                node-version: 18
+            - name: Install
+              run: npm ci
+            - name: Deploy
+              run: npm run deploy -- --require-approval never -c stage=${{ env.ENV }}
+              env:
+                  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+                  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+                  AWS_DEFAULT_REGION: eu-west-1
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
